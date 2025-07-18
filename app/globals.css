@@ -76,10 +76,10 @@
   }
 
   .section-padding {
-    @apply py-16 lg:py-24;
+    @apply py-12 lg:py-16;
   }
 
   .container-custom {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 }

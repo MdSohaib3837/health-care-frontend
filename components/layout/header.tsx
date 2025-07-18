@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { NavigationMenu } from "../ui/navigation-menu";
+import { MainNavigation } from "./navigation";
 
 interface HeaderProps {
   className?: string;
@@ -66,24 +66,24 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
           {/* Logo and Branding */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              {/* Logo placeholder - you'll replace this with actual logo */}
-              <div className="w-16 h-16 bg-gradient-to-br from-healthcare-blue via-healthcare-teal to-healthcare-green rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
-                <div className="text-white font-bold text-lg">ANH</div>
+              {/* Logo placeholder - replace with actual logo */}
+              <div className="w-12 h-12 bg-gradient-to-br from-healthcare-blue via-healthcare-teal to-healthcare-green rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                <div className="text-white font-bold text-sm">ANH</div>
               </div>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-2xl lg:text-3xl font-heading font-bold text-healthcare-navy leading-tight">
+              <h1 className="text-xl lg:text-2xl font-heading font-bold text-healthcare-navy leading-tight">
                 All Nurses Home Health
               </h1>
-              <p className="text-healthcare-teal font-medium text-sm italic">
-                &quot;Led by Nurses. Trusted by Families&quot;
+              <p className="text-healthcare-teal font-medium text-xs italic">
+                &qout;Led by Nurses. Trusted by Families&qout;
               </p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <NavigationMenu />
+            <MainNavigation />
           </div>
 
           {/* CTA Button & Mobile Menu Toggle */}
@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
             {/* Desktop CTA Button */}
             <Link
               href="/contact"
-              className="hidden md:inline-flex items-center px-6 py-3 bg-healthcare-blue text-white font-semibold rounded-lg hover:bg-healthcare-navy transition-colors shadow-md hover:shadow-lg"
+              className="hidden md:inline-flex items-center px-4 py-2 bg-healthcare-blue text-white font-semibold rounded-lg hover:bg-healthcare-navy transition-colors shadow-md hover:shadow-lg text-sm"
             >
               <svg
                 className="h-4 w-4 mr-2"
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="container-custom py-4">
-            <nav className="space-y-4">
+            <nav className="space-y-3">
               <Link
                 href="/"
                 className="block py-2 text-healthcare-navy hover:text-healthcare-blue font-medium transition-colors"
@@ -171,21 +171,21 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
               </Link>
               <Link
                 href="/services/skilled-nursing"
-                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors"
+                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 → Skilled Nursing
               </Link>
               <Link
                 href="/services/wound-care"
-                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors"
+                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 → Wound Care
               </Link>
               <Link
                 href="/services/post-surgical"
-                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors"
+                className="block py-2 pl-4 text-gray-600 hover:text-healthcare-blue transition-colors text-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 → Post-Surgical Care
